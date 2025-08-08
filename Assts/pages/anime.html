@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Half Circle Animation with 1s Gap</title>
+<style>
+  body {
+    height: 100vh; /* Screen ki full height le */
+    display: flex; /* Center align ke liye flexbox */
+    justify-content: center; /* Horizontal center */
+    align-items: center; /* Vertical center */
+    background: #111; /* Dark background */
+  }
+  .container {
+    position: relative; /* Images ko absolute position karne ke liye */
+    width: 500px;  /* Animation area width */
+    height: 250px; /* Animation area height */
+  }
+  img {
+    position: absolute; /* Container ke andar freely move karne ke liye */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Circular images */
+    object-fit: cover; /* Image ko crop karke fill karna */
+    opacity: 0; /* Start me invisible */
+    transition: opacity 0.3s linear; /* Smooth fade in/out */
+  }
+</style>
+</head>
+<body>
+
+<!-- Image container -->
+<div class="container" id="circle">
+  <img src="../Pics/1dish.png">
+  <img src="../Pics/2dish.png">
+  <img src="../Pics/3dish.png">
+  <img src="../Pics/4dish.png">
+</div>
+
+<script>
+  const container = document.getElementById("circle"); // Container select
+  const images = container.querySelectorAll("img"); // Saare <img> select
+
+  // Animation ke center ka point
+  const centerX = container.clientWidth / 10;
+  const centerY = container.clientHeight;
+  const radius = 300; // Half circle ka radius
+
+  const moveDuration = 8000; // Ek image ko left-to-right move karne ka total time (ms)
+  const gapTime = 1500; // Ek image aur doosri image ke beech ka delay (ms)
+  const totalCycle = moveDuration + (gapTime * (images.length - 1)); 
+  // Total animation loop ka time (move + gaps for all images)
+
+  // Smooth easing function (start/end slow, middle fast)
+  function easeInOutSine(t) {
+    return -(Math.cos(Math.PI * t) - 1) / 2;
+  }
+
+  // Image ko ek given angle pe position karna
+  function positionImage(img, angleOffset) {
+    let offsetAngle = angleOffset * Math.PI / 180; // Degree to radians
+    let x = centerX + radius * Math.cos(offsetAngle) - img.offsetWidth / 2;
+    let y = centerY - radius * Math.sin(offsetAngle) - img.offsetHeight / 2;
+    img.style.transform = `translate(${x}px, ${y}px)`; // Move image
+  }
+
+  let start = null; // Animation start time track karne ke liye
+  function animate(timestamp) {
+    if (!start) start = timestamp; // First frame ka time store karo
+    let elapsed = timestamp - start; // Kitna time ho chuka
+
+    images.forEach((img, i) => {
+      let delay = gapTime * i; // Har image ke liye fixed gap
+      let t = ((elapsed - delay) % totalCycle) / moveDuration; 
+      // Normalized time [0-1] for movement
+
+      if (t < 0) t += 1; // Negative time ko adjust karna
+
+      if (t >= 0 && t <= 1) { // Agar image apni movement phase me hai
+        let eased = easeInOutSine(t); // Smooth motion
+        let angle = eased * 180; // Half circle (0° → 180°)
+        positionImage(img, angle); // Image ko set position pe le jao
+
+        // Fade in during start, fade out at end
+        if (t < 0.9) {
+          img.style.opacity = 1; // Visible
+        } else {
+          img.style.opacity = 0; // End pe hide
+        }
+      } else {
+        img.style.opacity = 0; // Movement ke bahar hai to invisible
+      }
+    });
+
+    requestAnimationFrame(animate); // Next frame call
+  }
+
+  requestAnimationFrame(animate); // Animation start
+</script>
+
+</body>
+</html>
