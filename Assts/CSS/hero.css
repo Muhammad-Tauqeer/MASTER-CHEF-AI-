@@ -98,26 +98,26 @@ a {
   25% {
     left: 690px;
     top: 250px;
-     z-index: 2;
-    opacity: 1
+    z-index: 2;
+    opacity: 1;
   }
   50% {
     left: 930px;
     top: 170px;
-     z-index: 2;
-    opacity: 1
+    z-index: 2;
+    opacity: 1;
   }
   75% {
     left: 1192px;
     top: 343px;
     /* z-index: -1; */
-     z-index: -1;
-      opacity: 1
+    z-index: -1;
+    opacity: 1;
   }
-  100%{
-     left: 582px;
+  100% {
+    left: 582px;
     top: 439px;
-   z-index: -1;
+    z-index: -1;
   }
 }
 .dish2 {
@@ -127,9 +127,9 @@ a {
   left: 690px;
   top: 250px;
   z-index: 2;
-   animation: dish1animation 8s linear infinite;
-   animation-delay: 2s;
-   opacity: 0;
+  animation: dish1animation 8s linear infinite;
+  animation-delay: 2s;
+  opacity: 0;
 
   /* background: url(image-removebg-preview (2).png); */
 }
@@ -140,9 +140,9 @@ a {
   left: 930px;
   top: 170px;
   z-index: 2;
-   animation: dish1animation 8s linear infinite;
-   animation-delay: 4s;
-   opacity: 0;
+  animation: dish1animation 8s linear infinite;
+  animation-delay: 4s;
+  opacity: 0;
 
   /* background: url(photo-1560750133-aafd1707f646-removebg-preview.png); */
 }
@@ -163,16 +163,16 @@ a {
   height: 135px;
   left: 1192px;
   top: 343px;
-   animation: dish1animation 8s linear infinite;
-   animation-delay: 6s;
-   opacity: 0;
-   z-index: 2;
+  animation: dish1animation 8s linear infinite;
+  animation-delay: 6s;
+  opacity: 0;
+  z-index: 2;
 
   /* background: url(image-removebg-preview (3).png); */
 }
 
-.img{
-    transition: transform 0.5s;
+.img {
+  transition: transform 0.5s;
 }
 .containers {
   position: relative;
@@ -189,9 +189,106 @@ a {
   opacity: 0;
   transition: opacity 0.3s linear;
 }
- canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border:  dotted 2px ;
- }
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: dotted 2px;
+}
+/* Food-theme scrollbar with #ff9f1c */
+
+/* Width & height */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+  background: #fff8f0; /* light cream background */
+  border-radius: 10px;
+}
+
+/* Scroll thumb */
+::-webkit-scrollbar-thumb {
+  background: #ff9f1c; /* main food color */
+  border-radius: 10px;
+  border: 2px solid #fff8f0; /* gap effect */
+}
+
+/* Hover effect */
+::-webkit-scrollbar-thumb:hover {
+  background: #e68915; /* slightly darker shade on hover */
+}
+
+/* Firefox support */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #ff9f1c #fff8f0;
+}
+.about-section {
+  height: 160vh;
+  width: 100%;
+  background-image: url(../Pics/Aboutbg\ copy.png);
+  background-size: cover;
+  position: relative;
+  /* background-position: ; */
+}
+.about_hed {
+  font-size: 80px;
+  font-weight: bolder;
+  color: white;
+}
+.whitespace {
+  height: 25vh;
+  width: 100%;
+}
+.hr1 {
+  width: 10px; /* chhota width, kyunki vertical line */
+  height: 100px; /* lambi height */
+  border: none; /* border hatao */
+  background-color: black; /* line ka color black */
+  transform: rotate(0deg); /* rotate nahi karna padega */
+  margin: 0 auto;
+  opacity: 1;
+  z-index: 1; /* center align */
+}
+.hr2 {
+  width: 10px; /* chhota width, kyunki vertical line */
+  height: 150px; /* lambi height */
+  border: none; /* border hatao */
+  background-color: black; /* line ka color black */
+  transform: rotate(0deg); /* rotate nahi karna padega */
+  margin: 0 auto;
+  opacity: 1;
+  z-index: 1; /* center align */
+}
+.sub-text-1 {
+  font-size: 20px;
+  color: white;
+}
+.svg-1 {
+  /* image-removebg-preview (4) 1 */
+
+  position: absolute;
+  /* width: 600px;
+height: 600px; */
+  left: 808px;
+  top: 120px;
+
+  /* background: url(image-removebg-preview (4).png); */
+}
+.svg-2 {
+  /* about2 */
+
+  position: absolute;
+  width: 597px;
+  height: 418px;
+  left: 62px;
+  top: 550px !important; 
+
+  /* background: url(image-removebg-preview (5).png); */
+}
+.mtt-5{
+  margin-top: 15% !important;
+}
