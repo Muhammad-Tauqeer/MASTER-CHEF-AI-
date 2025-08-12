@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master Chef AI Trail</title>
+<style>
+    body {
+        margin: 0;
+        background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+        height: 100vh;
+        overflow: hidden;
+        cursor: none;
+    }
+    .icon {
+        position: absolute;
+        pointer-events: none;
+        animation: glowUp 1.5s ease-out forwards;
+        transform: translate(-50%, -50%);
+    }
+    @keyframes glowUp {
+        0% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(0.8);
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.8))
+                    drop-shadow(0 0 25px rgba(0, 255, 255, 0.7));
+        }
+        100% {
+            opacity: 0;
+            transform: translate(-50%, -80%) scale(1.6);
+            filter: drop-shadow(0 0 40px rgba(255, 215, 0, 0));
+        }
+    }
+</style>
+</head>
+<body>
+
+<script>
+const icons = [
+    `<svg width="32" height="32" viewBox="0 0 512 512" fill="#FFD700"><path d="M256 32c-124 0-224 100-224 224s100 224 224 224 224-100 224-224S380 32 256 32zm0 400c-97.05 0-176-78.95-176-176S158.95 80 256 80s176 78.95 176 176-78.95 176-176 176z"/></svg>`, // generic circle for placeholder
+    `<svg width="32" height="32" viewBox="0 0 512 512" fill="#FF6347"><path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0zM128 384l128-256 128 256H128z"/></svg>`, // triangle (pizza shape placeholder)
+    `<svg width="32" height="32" viewBox="0 0 512 512" fill="#FFA500"><circle cx="256" cy="256" r="200"/></svg>`, // circle (burger bun placeholder)
+    `<svg width="32" height="32" viewBox="0 0 512 512" fill="#FF69B4"><rect x="112" y="112" width="288" height="288" rx="50"/></svg>` // cupcake placeholder
+];
+
+document.addEventListener("mousemove", function(e) {
+    const icon = document.createElement("div");
+    icon.className = "icon";
+    icon.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+    icon.style.left = `${e.pageX}px`;
+    icon.style.top = `${e.pageY}px`;
+    document.body.appendChild(icon);
+
+    setTimeout(() => {
+        icon.remove();
+    }, 1500);
+});
+</script>
+
+</body>
+</html>
