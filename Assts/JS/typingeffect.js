@@ -161,3 +161,44 @@ document.addEventListener("mousemove", function(e) {
         ripple.remove();
     }, 1000);
 });
+
+/////////////////////////////////////////////// Scroll animtion/////////////////////////////
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+/////////////////////////// navbar ////////////////////////////////
+
+document.body.addEventListener("dblclick", function(e) {
+  e.preventDefault(); // double click pe text selection avoid kare
+  document.querySelector(".secondaryNavbar").classList.toggle("secandary_navbar_active");
+});
+
+window.addEventListener("scroll", function() {
+  const secondaryNavbar = document.querySelector(".secondaryNavbar");
+  let scrollPosition = window.scrollY; // yeh missing tha
+  let triggerPoint = window.innerHeight * 0.8; // 101vh
+
+  if (scrollPosition <= triggerPoint) {
+    secondaryNavbar.classList.remove("secandary_navbar_active"); 
+  } else {
+    secondaryNavbar.classList.add("secandary_navbar_active"); 
+  }
+});
+
+
+////////////////////////////// tool tips ////////////////////////////
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+tooltipTriggerList.forEach(el => {
+  new bootstrap.Tooltip(el);
+});
