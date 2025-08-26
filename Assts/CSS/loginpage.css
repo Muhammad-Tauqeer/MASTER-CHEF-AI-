@@ -1,0 +1,13 @@
+*{
+    outline: none;
+    border: none;
+    padding: none;
+    text-decoration: none;
+    list-style: none;
+}
+nav{
+    width: 100vw !important;
+}
+.btttn{
+    justify-content: flex-end !important;
+}
