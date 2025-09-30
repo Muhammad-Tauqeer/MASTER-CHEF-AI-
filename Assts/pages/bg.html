@@ -1,52 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="Assts/CSS/bg.css" />
-  </head>
-  <body>
-    <div class="bg_container">
-      <img src="Assts/Pics/apple.png" alt="apple" />
-      <img src="Assts/Pics/orange.png" alt="apple" />
-      <img src="Assts/Pics/apple.png" alt="apple" />
-      <img src="Assts/Pics/orange.png" alt="apple" />
-      <img src="Assts/Pics/apple.png" alt="apple" />
-      <img src="Assts/Pics/orange.png" alt="apple" />
-      <img src="Assts/Pics/apple.png" alt="apple" />
-      <img src="Assts/Pics/orange.png" alt="apple" />
-      <img src="Assts/Pics/apple.png" alt="apple" />
-      <img src="Assts/Pics/orange.png" alt="apple" />
-      <img src="Assts/Pics/apple.png" alt="apple" />
-      <img src="Assts/Pics/orange.png" alt="apple" />
-      <img src="Assts/Pics/apple.png" alt="apple" />
-      <img src="Assts/Pics/orange.png" alt="apple" />
-      <img src="Assts/Pics/apple.png" alt="apple" />
-      <img src="Assts/Pics/orange.png" alt="apple" />
-      <img src="Assts/Pics/apple.png" alt="apple" />
-      <img src="Assts/Pics/orange.png" alt="apple" />
-      <img src="Assts/Pics/apple.png" alt="apple" />
-      <img src="Assts/Pics/orange.png" alt="apple" />
-      <img src="Assts/Pics/apple.png" alt="apple" />
-      <img src="Assts/Pics/orange.png" alt="apple" />
-      <img src="Assts/Pics/apple.png" alt="apple" />
-      <img src="Assts/Pics/orange.png" alt="apple" />
-      <img src="Assts/Pics/apple.png" alt="apple" />
-      <img src="Assts/Pics/orange.png" alt="apple" />
-      <img src="Assts/Pics/apple.png" alt="apple" />
-      <img src="Assts/Pics/orange.png" alt="apple" />
-      <img src="Assts/Pics/orange.png" alt="apple" />
-      <img src="Assts/Pics/apple.png" alt="apple" />
-      <img src="Assts/Pics/orange.png" alt="apple" />
-      
-    </div>
-    <div class="text_container">
-      <div class="text">
-        <h1>Hello My Dear</h1>
-        <span>This is a Beautifull Background Animation</span>
-      </div>
-    </div>
-  </body>
-  <script src="Assts/JS/bg.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Effect</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+<h3 id="typing-effect">
+  <span id="typed-texts"></span>
+  <span class="cursor">|</span>
+</h3>
+
+<style>
+  .cursor {
+    display: inline-block;
+    margin-left: 2px;
+    width: 10px;
+    animation: blink 0.7s infinite;
+    color: black;
+    font-weight: bold;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+</style>
+
+<script>
+  const texts = ["Hello World!", "Welcome to My Site", "Typing Effect Demo"]; 
+  const typedTextSpan = document.getElementById("typed-texts");
+  let textIndex = 0;
+  let charIndex = 0;
+  let typingSpeed = 100; 
+  let erasingSpeed = 50;
+  let delayBetweenTexts = 1500; 
+
+  function type() {
+    if (charIndex < texts[textIndex].length) {
+      typedTextSpan.textContent += texts[textIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(type, typingSpeed);
+    } else {
+      setTimeout(erase, delayBetweenTexts);
+    }
+  }
+
+  function erase() {
+    if (charIndex > 0) {
+      typedTextSpan.textContent = texts[textIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(erase, erasingSpeed);
+    } else {
+      textIndex++;
+      if (textIndex >= texts.length) textIndex = 0;
+      setTimeout(type, typingSpeed);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    if (texts.length) setTimeout(type, delayBetweenTexts);
+  });
+</script>
+
+
+</body>
 </html>

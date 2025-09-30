@@ -8,13 +8,13 @@
 .bg_container {
   height: 100vh;
   width: 100%;
-  background-image: url(../Pics/background.png);
   background-size: cover;
   background-position: 300%;
   position: absolute;
   top: 0;
   left: 0;
    overflow: hidden;
+   z-index: -1 !important;
 }
 .text_container {
   height: 100vh;

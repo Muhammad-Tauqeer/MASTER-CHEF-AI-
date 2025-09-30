@@ -4,355 +4,847 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Master Chef AI</title>
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="Assts/CSS/hero.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
       rel="stylesheet" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet" />
+
+    <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+    <!-- AOS Animation -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="Assts/CSS/homepage_mobileVeiw.css" />
   </head>
+
   <body>
-    <nav class="secondaryNavbar d-flex flex-column align-items-center">
-      <a href="#head"><img src="Assts/Pics/iconlogo.png" width="" alt="" /></a>
-      <div class="d-flex flex-column align-items-center gap-5">
-        <a
-          href="#teams"
-          data-bs-toggle="tooltip"
-          data-bs-placement="right"
-          title="Profile">
-          <i class="bi bi-person fss-icon"></i>
-        </a>
-        <a
-          href="Assts/pages/Chatbot.html"
-          data-bs-toggle="tooltip"
-          data-bs-placement="right"
-          title="Chat">
-          <i class="bi bi-chat-dots fss-icon"></i>
-        </a>
-        <a
-          href="#about"
-          data-bs-toggle="tooltip"
-          data-bs-placement="right"
-          title="About">
-          <i class="bi bi-book fss-icon"></i>
-        </a>
-        <a
-          href="#head"
-          data-bs-toggle="tooltip"
-          data-bs-placement="right"
-          title="Pricing">
-          <i class="bi bi-tags fss-icon"></i>
-        </a>
-      </div>
-    </nav>
-    <section class="header" id="head">
-      <!-- Navbar -->
-      <nav
-        class="container d-flex flex-row align-items-center justify-content-between py-3">
-        <!-- Logo -->
-        <a href="#head"><img src="Assts/Pics/Logo.png" alt="logo" /></a>
-
-        <!-- Navigation Links -->
-        <ul
-          class="d-flex flex-row align-items-center gap-5 fs-5 mb-0 list-unstyled">
-          <li><a href="#about">About</a></li>
-          <li><a href="">Recipe Generator</a></li>
-          <li><a href="#teams">Our Teams</a></li>
-          <li><a href="">Pricing</a></li>
-        </ul>
-
-        <!-- Auth Buttons -->
-        <div class="d-flex flex-row align-items-center gap-3">
-          <a href="Assts/pages/login_Singup.html" class="btn btn-orange text-white px-4">Login</a>
-          <a href="Assts/pages/login_Singup.html" class="btn btn-orange text-white px-4">Sign Up</a>
+    <!-- Side Navbar -->
+    <div class="pc-home-page">
+      <nav class="secondaryNavbar d-flex flex-column align-items-center">
+        <a href="#head"
+          ><img src="Assts/Pics/iconlogo.png" alt="icon logo"
+        /></a>
+        <div class="d-flex flex-column align-items-center gap-5">
+          <a
+            href="#teams"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            title="Profile">
+            <i class="bi bi-person fss-icon"></i>
+          </a>
+          <a
+            href="Assts/pages/Chatbot.html"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            title="Chat">
+            <i class="bi bi-chat-dots fss-icon"></i>
+          </a>
+          <a
+            href="#about"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            title="About">
+            <i class="bi bi-book fss-icon"></i>
+          </a>
+          <a
+            href="#head"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            title="Pricing">
+            <i class="bi bi-tags fss-icon"></i>
+          </a>
         </div>
       </nav>
-      <nav
-        id="secondaryNavbar"
-        class="navbar bg-dark text-white p-3 sticky-top"
-        style="display: none">
-        Second Navbar
-      </nav>
 
-      <!-- Hero Section -->
-      <div class="container my">
-        <div class="row align-items-center">
-          <div class="col-md-5 d-flex flex-column gap-4">
-            <!-- Custom Text -->
-            <div>
-              <h1 class="fs orange fw-bold">Quick</h1>
-              <h2 class="typing-effect h3">
-                <span id="typed-text"></span><span class="cursor">|</span>
-              </h2>
-            </div>
+      <!-- Header Section -->
+      <section class="header" id="head">
+        <nav
+          class="container d-flex flex-row align-items-center justify-content-between py-3">
+          <!-- Logo -->
+          <a href="#head"><img src="Assts/Pics/Logo.png" alt="logo" /></a>
 
-            <!-- Description -->
-            <p class="fs-5">
-              Just tell Master Chef AI what you want or what ingredients you
-              have. It instantly creates a personalized recipe tailored to your
-              taste.
-            </p>
+          <!-- Navigation Links -->
+          <ul
+            class="d-flex flex-row align-items-center gap-5 fs-5 mb-0 list-unstyled">
+            <li><a href="#about">About</a></li>
+            <li><a href="Assts/pages/bg.html">Recipe Generator</a></li>
+            <li><a href="#teams">Our Teams</a></li>
+            <li><a href="">Pricing</a></li>
+          </ul>
 
-            <!-- CTA Button -->
+          <!-- Auth Buttons -->
+          <div class="d-flex flex-row align-items-center gap-3">
             <a
-              class="btn btn-orange btn-lg w-50 text-white fs-2"
-              href="Assts/pages/Chatbot.html">
-              Get Started
-            </a>
+              href="Assts/pages/login_Singup.html"
+              class="btn btn-orange text-white px-4"
+              >Login</a
+            >
+            <a
+              href="Assts/pages/login_Singup.html"
+              class="btn btn-orange text-white px-4"
+              >Sign Up</a
+            >
           </div>
-          <div
-            class="col-md-7 img_conatainer d align-items-center justify-content-center">
-            <img
-              class="mianpics img"
-              src="Assts/Pics/maindish.png"
-              alt="Main Dish" />
-            <div class="containers" id="circle">
-              <canvas id="pathCanvas" width="600" height="300"></canvas>
-              <img src="Assts/Pics/1dish.png" />
-              <img src="Assts/Pics/2dish.png" />
-              <img src="Assts/Pics/3dish.png" />
-              <img src="Assts/Pics/4dish.png" />
-              <img src="Assts/Pics/234.png" alt="" />
-              <img src="Assts/Pics/334.png" alt="" />
+        </nav>
+
+        <nav
+          id="secondaryNavbar"
+          class="navbar bg-dark text-white p-3 sticky-top"
+          style="display: none">
+          Second Navbar
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="container my">
+          <div class="row align-items-center">
+            <div class="col-md-5 d-flex flex-column gap-4">
+              <div>
+                <h1 class="fs orange fw-bold">Quick</h1>
+                <h2 class="typing-effect h3">
+                  <span class="typed-text"></span><span class="cursor">|</span>
+                </h2>
+              </div>
+
+              <p class="fs-5">
+                Just tell Master Chef AI what you want or what ingredients you
+                have. It instantly creates a personalized recipe tailored to
+                your taste.
+              </p>
+
+              <a
+                class="btn btn-orange btn-lg w-50 text-white fs-2"
+                href="Assts/pages/Chatbot.html">
+                Get Started
+              </a>
+            </div>
+
+            <div
+              class="col-md-7 img_conatainer d align-items-center justify-content-center">
+              <img
+                class="mianpics img"
+                src="Assts/Pics/maindish.png"
+                alt="Main Dish" />
+              <div class="containers" id="circle">
+                <canvas id="pathCanvas" width="600" height="300"></canvas>
+                <img src="Assts/Pics/1dish.png" alt="Dish 1" />
+                <img src="Assts/Pics/2dish.png" alt="Dish 2" />
+                <img src="Assts/Pics/3dish.png" alt="Dish 3" />
+                <img src="Assts/Pics/4dish.png" alt="Dish 4" />
+                <img src="Assts/Pics/234.png" alt="Dish extra" />
+                <img src="Assts/Pics/334.png" alt="Dish extra" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="about-section" data-aos="fade-up" id="about">
+        <div class="container">
+          <div class="row align-items-center">
+            <h1 class="about_hed">About</h1>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-7 d-flex flex-column gap-2">
+              <h2 class="fs-1 fw-bold">Cook Smart Better Life</h2>
+              <div class="d-flex flex-row align-items-center gap-3">
+                <hr class="ms-2 hr1" />
+                <span class="sub-text-1">
+                  At Master Chef AI, we believe that cooking should be creative,
+                  convenient, and accessible to everyone. By blending culinary
+                  art with the power of artificial intelligence, we’re
+                  transforming kitchens into smart, interactive spaces — where
+                  anyone can become a chef.
+                </span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <dotlottie-wc
+                src="https://lottie.host/f751e71e-d729-4406-92ae-e6799e0b98ea/N75i1h8PQh.lottie"
+                style="width: 400px; height: 400px"
+                speed="1"
+                autoplay
+                class="svg-1"
+                loop>
+              </dotlottie-wc>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="linebyanimation"></div>
+          </div>
+
+          <div class="row align-items-center mtt-5 gap-5">
+            <div class="col-md-4">
+              <dotlottie-wc
+                src="https://lottie.host/d10a057b-7cbf-40e9-9110-81b0d39958c7/Djm9pL41VV.lottie"
+                style="width: 400px; height: 400px"
+                speed="1"
+                class="svg-2"
+                autoplay
+                loop>
+              </dotlottie-wc>
+            </div>
+            <div class="col-md-7 d-flex flex-column gap-2">
+              <h2 class="fs-1 fw-bold">Our Goal</h2>
+              <div class="d-flex flex-row align-items-center gap-3">
+                <hr class="ms-2 hr2" />
+                <span class="sub-text-1">
+                  At Master Chef AI, our goal is to make smart cooking easy,
+                  personalized, and accessible. We combine AI with everyday
+                  cooking to guide and inspire every level of cook. You're not
+                  just following recipes — you're cooking smarter and living
+                  better. Our technology learns your tastes and preferences to
+                  tailor each meal just for you. Experience the future of
+                  cooking where creativity meets convenience.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <br /><br />
+      <div class="featurebox">
+        <div class="feature-ovelay"></div>
+        <div class="mo container">
+          <div class="w-500">
+            <h2 class="fw-bold fet-txt">Top Features</h2>
+            <span class="fs-4"
+              >A feature of Master Chef AI is a special function or quality that
+              makes it useful and unique. It highlights what Master Chef AI can
+              do and how it benefits the user.</span
+            >
+          </div>
+
+          <div class="featurecontent mt-3">
+            <div class="feature-headings-con container">
+              <!-- FAQ 1 -->
+              <div class="fs-feature-heading mb-3">
+                <div class="d-flex flex-row">
+                  <p
+                    class="fs-3 fw-bolder ps-2 pt-2"
+                    onclick="FeatureFAQS(this) ; faq1('Assts/Pics/recipeOndemand.png')">
+                    AI Recipe on Demand
+                  </p>
+                  <i
+                    class="bi bi-chevron-down fs-feature-icons fs-4"
+                    onclick="FeatureFAQS(this); faq1('Assts/Pics/recipeOndemand.png')"></i>
+                </div>
+                <p class="feature-text ps-3">
+                  The "AI Recipe on Demand" feature instantly generates unique,
+                  personalized recipes based on what ingredients you have, your
+                  dietary needs, or your cuisine preferences. It acts as a smart
+                  digital sous-chef, often using photo recognition to identify
+                  your ingredients and minimize food waste. This technology
+                  offers a step-by-step cooking guide and often includes
+                  nutritional facts, making meal planning effortless and
+                  creative.
+                </p>
+              </div>
+
+              <!-- FAQ 2 -->
+              <div class="fs-feature-heading mb-3">
+                <div class="d-flex flex-row">
+                  <p
+                    class="fs-3 fw-bolder ps-2 pt-2"
+                    onclick="FeatureFAQS(this) ; faq1('Assts/Pics/voice.png')">
+                    Voice-to-Recipe Prompting
+                  </p>
+                  <i
+                    class="bi bi-chevron-down fs-feature-icons fs-4"
+                    onclick="FeatureFAQS(this); faq1('Assts/Pics/voice.png')"></i>
+                </div>
+                <p class="feature-text ps-3">
+                  This feature allows users to speak their recipe prompt
+                  directly to the app, eliminating the need for typing. The AI
+                  uses advanced voice recognition to instantly transcribe the
+                  spoken command (e.g., "Make a quick dinner with chicken and
+                  broccoli, no spice"), automatically process it as a text
+                  prompt, and immediately generate the tailored recipe. This
+                  provides a truly hands-free cooking experience, perfect for
+                  when your hands are busy in the kitchen.
+                </p>
+              </div>
+
+              <!-- FAQ 3 -->
+              <div class="fs-feature-heading mb-3">
+                <div class="d-flex flex-row">
+                  <p
+                    class="fs-3 fw-bolder ps-2 pt-2"
+                    onclick="FeatureFAQS(this) ; faq1('Assts/Pics/recipehubs.png')">
+                    Personalized Recipe Hub
+                  </p>
+                  <i
+                    class="bi bi-chevron-down fs-feature-icons fs-4"
+                    onclick="FeatureFAQS(this) ; faq1('Assts/Pics/recipehubs.png')"></i>
+                </div>
+                <p class="feature-text ps-3">
+                  This hub provides a limited, curated collection of pre-made
+                  recipes available for the user to select instantly. While most
+                  customized meals are created via AI prompts, this hub offers
+                  easy, one-click access to a few established recipes. A more
+                  comprehensive, customizable Recipe Hub feature will be
+                  launched soon.
+                </p>
+              </div>
+
+              <!-- FAQ 4 -->
+              <div class="fs-feature-heading mb-3">
+                <div class="d-flex flex-row">
+                  <p
+                    class="fs-3 fw-bolder ps-2 pt-2"
+                    onclick="FeatureFAQS(this) ; faq1('Assts/Pics/samrt.png')">
+                    Smart & Fast Response
+                  </p>
+                  <i
+                    class="bi bi-chevron-down fs-feature-icons fs-4"
+                    onclick="FeatureFAQS(this) ; faq1('Assts/Pics/samrt.png')"></i>
+                </div>
+                <p class="feature-text ps-3">
+                  This feature ensures the AI provides intelligent and
+                  lightning-fast answers to all your cooking questions. It's
+                  designed to understand your queries quickly, whether you're
+                  asking for a recipe adjustment or a cooking tip. The AI's
+                  responses are not only rapid but also highly relevant and
+                  accurate, providing you with instant, helpful information
+                  based on the context of your conversation.
+                </p>
+              </div>
+
+              <!-- FAQ 5 -->
+              <div class="fs-feature-heading mb-3">
+                <div class="d-flex flex-row">
+                  <p
+                    class="fs-3 fw-bolder ps-2 pt-2"
+                    onclick="FeatureFAQS(this) ; faq1('Assts/Pics/save.png')">
+                    Save Chat & AI Voice Readback
+                  </p>
+                  <i
+                    class="bi bi-chevron-down fs-feature-icons fs-4"
+                    onclick="FeatureFAQS(this) ; faq1('Assts/Pics/save.png')"></i>
+                </div>
+                <p class="feature-text ps-3">
+                  This feature combines two great capabilities for an enhanced
+                  cooking experience. The Save Chat function automatically
+                  preserves your entire conversation history with the AI,
+                  including all your custom prompts and generated recipes, so
+                  you never lose an idea. Furthermore, the AI Voice Readback
+                  ensures that every AI response and recipe step is clearly read
+                  aloud to you, eliminating the need to look at your screen and
+                  keeping your hands free while cooking.
+                </p>
+              </div>
+              <!-- faqs 6 -->
+              <div class="fs-feature-heading mb-3">
+                <div class="d-flex flex-row">
+                  <p
+                    class="fs-3 fw-bolder ps-2 pt-2"
+                    onclick="FeatureFAQS(this) ; faq1('Assts/Pics/uncompingfeautre.png')">
+                    Upcoming Features
+                  </p>
+                  <i
+                    class="bi bi-chevron-down fs-feature-icons fs-4"
+                    onclick="FeatureFAQS(this) ; faq1('Assts/Pics/uncompingfeautre.png')"></i>
+                </div>
+                <p class="feature-text ps-3">
+                  The platform is continuously evolving! We have several more
+                  exciting and innovative features currently in development that
+                  will further enhance your cooking experience. Stay tuned for
+                  future updates as they will be rolling out soon!
+                </p>
+              </div>
+            </div>
+            <div
+              class="feature-headings-con d-flex align-items-center justify-content-center container">
+              <img src="Assts/Pics/ai.png" class="a show" alt="" />
             </div>
           </div>
         </div>
       </div>
-    </section>
+      <br /><br />
+      <div class="ourteams">
+        <div class="container">
+          <div class="team-subtext">
+            <h2 class="text-center text-white team_heading_text mb-2">
+              Our Teams
+            </h2>
+            <p class="text-center fs-5 fw-bold mb-1">
+              Meet the People Behind Our Success
+            </p>
+            <p class="text-center fs-5 mt-1">
+              Behind every smart recipe is our team — food lovers and techies
+              bringing flavors to life with AI.
+            </p>
+          </div>
+          <div class="em-line mt-2"></div>
 
-    <!-- ///////////////// About Section ///////////////// -->
-    <section class="about-section" data-aos="fade-up" id="about">
-      <div class="whitespace"></div>
-      <div class="container">
-        <div class="row align-items-center">
-          <h1 class="about_hed">About</h1>
-        </div>
-      </div>
+          <div class="teamCard_container">
+            <!-- Card 1 -->
+            <div
+              class="ourTeamsCards"
+              style="background-image: url('Assts/Pics/walled.png')">
+              <div class="teamdatiles">
+                <h5>Waleed Khan</h5>
+                <p>Frontend Developer</p>
+                <p class="mt-2">responsive web apps with modern UI.</p>
+                <div class="social-icons">
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-github"></i></a>
+                </div>
+              </div>
+            </div>
 
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-7 d-flex flex-column gap-2">
-            <h2 class="fs-1 fw-bold">Cook Smart Better Life</h2>
-            <div class="d-flex flex-row align-items-center gap-3">
-              <hr class="ms-2 hr1" />
-              <span class="sub-text-1"
-                >At Master Chef AI, we believe that cooking should be creative,
-                convenient, and accessible to everyone. By blending culinary art
-                with the power of artificial intelligence, we’re transforming
-                kitchens into smart, interactive spaces — where anyone can
-                become a chef.</span
-              >
+            <!-- Card 2 -->
+            <div
+              class="ourTeamsCards"
+              style="background-image: url('Assts/Pics/osama.png')">
+              <div class="teamdatiles">
+                <h5>Osama Yousuf</h5>
+                <p>Project Maneger</p>
+                <p class="mt-2">
+                  Skilled in leading teams and delivering successful projects.
+                </p>
+                <div class="social-icons">
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-github"></i></a>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <dotlottie-wc
-              src="https://lottie.host/f751e71e-d729-4406-92ae-e6799e0b98ea/N75i1h8PQh.lottie"
-              style="width: 400px; height: 400px"
-              speed="1"
-              autoplay
-              class="svg-1"
-              loop></dotlottie-wc>
-          </div>
-        </div>
-        <div class="row">
-          <div class="linebyanimation"></div>
-        </div>
-        <div class="row align-items-center mtt-5 gap-5">
-          <div class="col-md-4">
-            <dotlottie-wc
-              src="https://lottie.host/d10a057b-7cbf-40e9-9110-81b0d39958c7/Djm9pL41VV.lottie"
-              style="width: 400px; height: 400px"
-              speed="1"
-              class="svg-2"
-              autoplay
-              loop></dotlottie-wc>
-          </div>
-          <div class="col-md-7 d-flex flex-column gap-2">
-            <h2 class="fs-1 fw-bold">Our Goal</h2>
-            <div class="d-flex flex-row align-items-center gap-3">
-              <hr class="ms-2 hr2" />
-              <span class="sub-text-1"
-                >At Master Chef AI, our goal is to make smart cooking easy,
-                personalized, and accessible. We combine AI with everyday
-                cooking to guide and inspire every level of cook. You're not
-                just following recipes — you're cooking smarter and living
-                better. Our technology learns your tastes and preferences to
-                tailor each meal just for you. Experience the future of cooking
-                where creativity meets convenience.</span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ///////////////////////////// OUR TEAMS ///////////////////////////////// -->
+            <!-- Card 3 -->
+            <div
+              class="ourTeamsCards"
+              style="background-image: url('Assts/Pics/tauqeer.png')">
+              <div class="teamdatiles">
+                <h5>Muhammad Tauqeer</h5>
+                <p>Full Stack Developer</p>
+                <p class="mt-2">
+                  Expert in building scalable APIs and robust backend systems.
+                </p>
+                <div class="social-icons">
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-github"></i></a>
+                </div>
+              </div>
+            </div>
 
-    <section class="team-section" data-aos="fade-up" id="teams">
-      <div class="d-flex flex-column align-items-center justify-content-center">
-        <h2 class="mt-5 teams-text">Our Teams</h2>
-        <span class="fs-5 text-light"
-          >Real Chefs. Real Intelligence. One Vision.</span
-        >
-      </div>
-      <div
-        class="d-flex flex-row align-items-center justify-content-center mt-5 gap-3">
-        <div class="teams-card">
-          <div
-            class="card-content d-flex flex-column align-items-center justify-content-center gap-2">
-            <img
-              src="Assts/Pics/teammember1.png"
-              alt="1st Team Member"
-              height="200" />
-            <div class="line"></div>
-            <div class="deatail d-flex flex-column">
-              <span class="fs-3 fw-bold">John Doe</span>
-              <span class="text-center gapp">Web Developer</span>
+            <!-- Card 4 -->
+            <div
+              class="ourTeamsCards"
+              style="background-image: url('Assts/Pics/umer.enc')">
+              <div class="teamdatiles">
+                <h5>Umar Khan</h5>
+                <p>Fronted Developer</p>
+                <p class="mt-2">
+                  Focused on creating intuitive and creative user experiences.
+                </p>
+                <div class="social-icons">
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-github"></i></a>
+                </div>
+              </div>
             </div>
-            <div class="line"></div>
-            <span class="text-center small">
-              John Deo — Frontend Developer 3+ years of experience building
-              modern web apps. Graduated in Computer Science from Virtual Tech
-              University.
-            </span>
-          </div>
-          <div class="icon">
-            <a href="tel:+123456789"><i class="bi bi-telephone"></i></a>
-            <a href="mailto:john@example.com"><i class="bi bi-envelope"></i></a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank"
-              ><i class="bi bi-linkedin"></i
-            ></a>
-            <a href="https://github.com/yourprofile" target="_blank"
-              ><i class="bi bi-github"></i
-            ></a>
-            <a href="cv.pdf" target="_blank"
-              ><i class="bi bi-file-earmark-text"></i
-            ></a>
-          </div>
-        </div>
-
-        <div class="teams-card">
-          <div
-            class="card-content d-flex flex-column align-items-center justify-content-center gap-2">
-            <img
-              src="Assts/Pics/teammember1.png"
-              alt="1st Team Member"
-              height="200" />
-            <div class="line"></div>
-            <div class="deatail d-flex flex-column">
-              <span class="fs-3 fw-bold">John Doe</span>
-              <span class="text-center gapp">Web Developer</span>
-            </div>
-            <div class="line"></div>
-            <span class="text-center small">
-              John Deo — Frontend Developer 3+ years of experience building
-              modern web apps. Graduated in Computer Science from Virtual Tech
-              University.
-            </span>
-          </div>
-          <div class="icon">
-            <a href="tel:+123456789"><i class="bi bi-telephone"></i></a>
-            <a href="mailto:john@example.com"><i class="bi bi-envelope"></i></a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank"
-              ><i class="bi bi-linkedin"></i
-            ></a>
-            <a href="https://github.com/yourprofile" target="_blank"
-              ><i class="bi bi-github"></i
-            ></a>
-            <a href="cv.pdf" target="_blank"
-              ><i class="bi bi-file-earmark-text"></i
-            ></a>
-          </div>
-        </div>
-        <div class="teams-card">
-          <div
-            class="card-content d-flex flex-column align-items-center justify-content-center gap-2">
-            <img
-              src="Assts/Pics/teammember1.png"
-              alt="1st Team Member"
-              height="200" />
-            <div class="line"></div>
-            <div class="deatail d-flex flex-column">
-              <span class="fs-3 fw-bold">John Doe</span>
-              <span class="text-center gapp">Web Developer</span>
-            </div>
-            <div class="line"></div>
-            <span class="text-center small">
-              John Deo — Frontend Developer 3+ years of experience building
-              modern web apps. Graduated in Computer Science from Virtual Tech
-              University.
-            </span>
-          </div>
-          <div class="icon">
-            <a href="tel:+123456789"><i class="bi bi-telephone"></i></a>
-            <a href="mailto:john@example.com"><i class="bi bi-envelope"></i></a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank"
-              ><i class="bi bi-linkedin"></i
-            ></a>
-            <a href="https://github.com/yourprofile" target="_blank"
-              ><i class="bi bi-github"></i
-            ></a>
-            <a href="cv.pdf" target="_blank"
-              ><i class="bi bi-file-earmark-text"></i
-            ></a>
-          </div>
-        </div>
-        <div class="teams-card">
-          <div
-            class="card-content d-flex flex-column align-items-center justify-content-center gap-2">
-            <img
-              src="Assts/Pics/teammember1.png"
-              alt="1st Team Member"
-              height="200" />
-            <div class="line"></div>
-            <div class="deatail d-flex flex-column">
-              <span class="fs-3 fw-bold">John Doe</span>
-              <span class="text-center gapp">Web Developer</span>
-            </div>
-            <div class="line"></div>
-            <span class="text-center small">
-              John Deo — Frontend Developer 3+ years of experience building
-              modern web apps. Graduated in Computer Science from Virtual Tech
-              University.
-            </span>
-          </div>
-          <div class="icon">
-            <a href="tel:+123456789"><i class="bi bi-telephone"></i></a>
-            <a href="mailto:john@example.com"><i class="bi bi-envelope"></i></a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank"
-              ><i class="bi bi-linkedin"></i
-            ></a>
-            <a href="https://github.com/yourprofile" target="_blank"
-              ><i class="bi bi-github"></i
-            ></a>
-            <a href="cv.pdf" target="_blank"
-              ><i class="bi bi-file-earmark-text"></i
-            ></a>
           </div>
         </div>
       </div>
-    </section>
-   
-     
-  </body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+      <br /><br />
+      <!-- Review Section -->
+      <div class="reveiwbody">
+        <div class="review-section">
+          <h2 class="section-title">Customer Reviews</h2>
+
+          <div class="reviews-container">
+            <div class="reviews-slider"></div>
+            <div class="slider-controls">
+              <button class="slider-btn prev-btn">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="slider-btn next-btn">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+            <div class="slider-dots"></div>
+          </div>
+
+          <button class="add-review-btn" id="openPopup">
+            <i class="fas fa-plus-circle"></i> Add Your Review
+          </button>
+        </div>
+
+        <!-- Popup -->
+        <div class="popup-overlay" id="popupOverlay">
+          <div class="popup-content">
+            <div class="popup-header">
+              <h3 class="popup-title">Add Your Review</h3>
+              <button class="close-popup" id="closePopup">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            <form class="popup-form" id="reviewForm">
+              <div class="form-group">
+                <label for="userName">Your Name</label>
+                <input type="text" id="userName" required />
+              </div>
+
+              <div class="form-group">
+                <label for="userEmail">Your Email</label>
+                <input type="email" id="userEmail" required />
+              </div>
+
+              <div class="form-group">
+                <label for="userImage">Upload Image (optional)</label>
+                <input type="file" id="userImage" accept="image/*" />
+              </div>
+
+              <div class="form-group">
+                <label>Rating</label>
+                <div class="star-rating">
+                  <input
+                    type="radio"
+                    id="star5"
+                    name="rating"
+                    value="5" /><label for="star5"
+                    ><i class="fas fa-star"></i
+                  ></label>
+                  <input
+                    type="radio"
+                    id="star4"
+                    name="rating"
+                    value="4" /><label for="star4"
+                    ><i class="fas fa-star"></i
+                  ></label>
+                  <input
+                    type="radio"
+                    id="star3"
+                    name="rating"
+                    value="3" /><label for="star3"
+                    ><i class="fas fa-star"></i
+                  ></label>
+                  <input
+                    type="radio"
+                    id="star2"
+                    name="rating"
+                    value="2" /><label for="star2"
+                    ><i class="fas fa-star"></i
+                  ></label>
+                  <input
+                    type="radio"
+                    id="star1"
+                    name="rating"
+                    value="1"
+                    required /><label for="star1"
+                    ><i class="fas fa-star"></i
+                  ></label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="reviewText">Your Review</label>
+                <textarea id="reviewText" required></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn">Submit Review</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- FAQs Sections -->
+      <br /><br />
+      <div id="faqbody">
+        <div class="wrap">
+          <!-- FAQ HEADER -->
+          <div class="faq-header">
+            <div class="serif">Frequently</div>
+            <div class="rest">Asked Questions</div>
+          </div>
+
+          <!-- FAQ GRID -->
+          <div class="cols">
+            <div>
+              <div class="faq-list">
+                <div class="faq-item">
+                  <div class="faq-header-row">
+                    <div class="question">
+                      How does Master Chief AI help me in daily tasks?
+                    </div>
+                    <button class="icon-btn">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                  <div class="answer">
+                    Master Chief AI automates your daily workflow, manages
+                    reminders, analyzes data, and provides smart suggestions so
+                    you save time and focus on important tasks.
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <div class="faq-header-row">
+                    <div class="question">
+                      Can Master Chief AI integrate with tools I already use?
+                    </div>
+                    <button class="icon-btn">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                  <div class="answer">
+                    Yes! Master Chief AI easily integrates with popular tools
+                    like Google Workspace, Slack, Trello, and many others.
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <div class="faq-header-row">
+                    <div class="question">
+                      How do I get customer support if I face issues?
+                    </div>
+                    <button class="icon-btn">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                  <div class="answer">
+                    We offer 24/7 customer support through live chat, email, and
+                    phone. Our AI-powered assistant can also help you instantly
+                    with most queries.
+                  </div>
+                </div>
+
+                <div class="faq-item">
+                  <div class="faq-header-row">
+                    <div class="question">
+                      What subscription plan is best for small businesses?
+                    </div>
+                    <button class="icon-btn">
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                  <div class="answer">
+                    The Professional Plan is perfect for small businesses as it
+                    includes collaboration tools, integrations, and advanced
+                    reporting at an affordable price.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- RIGHT ART -->
+            <div class="right-art" aria-hidden="true">
+              <div class="art-circle">
+                <img
+                  class="pic"
+                  src="Assts/Pics/Faq image.png"
+                  alt="decorative art" />
+              </div>
+            </div>
+          </div>
+
+          <!-- CALLOUT -->
+          <div class="callout">
+            <span class="big">Turn your ideas into powerful</span>
+            <span class="sub"
+              >solutions faster, smarter, and effortlessly with Master Chief
+              AI.</span
+            >
+            <div>
+              <a class="cta" href="#">
+                <i class="fas fa-magic"></i> Command Your AI Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer Section -->
+      <footer class="footer-section">
+        <div class="newsletter-container">
+          <div class="newsletter-text">
+            <h2>Keep up to date with Master Chef News</h2>
+          </div>
+          <div class="newsletter-form">
+            <input type="text" placeholder="First Name" />
+            <input type="email" placeholder="Email" />
+            <input type="text" placeholder="Last Name" />
+            <button type="submit">SIGN UP</button>
+          </div>
+        </div>
+
+        <div class="footer-content-container">
+          <div class="footer-column footer-about">
+            <div class="logo"><span>MASTER CHEF</span></div>
+            <p>
+              Smart recipes, personalized meal plans, and dynamic grocery lists
+              — powered by advanced AI to perfectly match your unique taste,
+              lifestyle, health goals, time, and budget.
+            </p>
+            <ul>
+              <li><span>•</span> Nutrition-aware</li>
+              <li><span>•</span> Privacy-first</li>
+              <li><span>•</span> Fast & lightweight</li>
+            </ul>
+            <p class="copyright">
+              &copy; 2025 Master Chef AI. All rights reserved.
+            </p>
+          </div>
+
+          <div class="footer-column footer-explore">
+            <h4>Explore</h4>
+            <ul>
+              <li>Home</li>
+              <li>About</li>
+              <li>Our Team</li>
+              <li>Recipe Generator</li>
+              <li>Recipe Hubs</li>
+            </ul>
+            <p class="copyright">
+              &copy; 2025 Master Chef AI. All rights reserved.
+            </p>
+          </div>
+
+          <div class="footer-column footer-policy">
+            <h4>AI & Policy</h4>
+            <ul>
+              <li>How Our AI Works</li>
+              <li>Data & Privacy Policy</li>
+              <li>Nutrition & Health Disclaimer</li>
+              <li>Limitations of AI Suggestions</li>
+              <li>Food Safety Guidelines</li>
+              <li>Responsible AI Usage</li>
+              <li>Terms & Conditions</li>
+              <li>Accessibility Statement</li>
+              <li>Cookie Policy & Preferences</li>
+              <li>Customer Support & Feedback Policy</li>
+            </ul>
+            <p class="copyright">
+              &copy; 2025 Master Chef AI. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- ///////////////////////////////////// mobile Veiw Code HTML /////////////////////// -->
+    <div class="mobile-Veiw-homepage">
+      <div class="mobile-hero-sections">
+        <nav class="mob-nav">
+          <img src="Assts/Pics/Logo.png" alt="logo" />
+          <span class="am-burger-mob" id="burger"
+            ><i class="bi bi-list"></i
+          ></span>
+        </nav>
+
+        <!-- Sidebar Menu -->
+        <div class="mob-menu" id="mobMenu">
+          <span class="close-btn" id="closeBtn"
+            ><i class="bi bi-x-lg"></i
+          ></span>
+
+          <span class="span"><a href="#">Home</a></span>
+          <span class="span"><a href="#">About</a></span>
+          <span class="span"><a href="#">Chef AI</a></span>
+          <span class="span"><a href="#">Feature</a></span>
+          <span class="span"><a href="#">Our Temas</a></span>
+          <span class="span"><a href="#">FAQs</a></span>
+          <span class="span"><a href="#">Reveiw</a></span>
+          <span class="span"><a href="#">Login</a></span>
+          <span class="span"><a href="#">SignUp</a></span>
+        </div>
+        <div class="mobileherocontent container">
+          <h2>Quick</h2>
+          <span class="fs-1">Delicious Recipe</span>
+          <p class="f-4 mt-1">
+            Just tell Master Chef AI what you want or what ingredients you have.
+            It instantly creates a personalized recipe tailored to your taste.
+          </p>
+          <a href="Assts/pages/Chatbot.html" class="btn btnn-started links">Get Started</a>
+        </div>
+        <div class="pics-mob  d-flex align-items-center justify-content-center">
+          <img src="Assts/Pics/chef.png" alt="" height="350px">
+        </div>
+      </div>
+      <br><br>
+      <div class="mobileVeiwAboutUs container">
+        <h2 class="mob_about_heading">About</h2>
+        <span class="fs-5 fw-bold text-white">Smart Cooking, Crafted by AI</span>
+        <div class="mob-row"></div>
+        <div class="d-flex flex-column gap-3 mt-5">
+          <span class="fs-1 fw-bold">Cook Smart Better Life</span>
+          <div class="d-flex flex-row align-items-center justify-content-center gap-3">
+            <div class="con-row"></div>
+            <span>At Master Chef AI, we believe that cooking should be creative, convenient, and accessible to everyone. By blending culinary art with the power of artificial intelligence, we’re transforming kitchens into smart, interactive spaces — where anyone can become a chef.</span>
+          </div>
+        </div>
+        <div class="d-flex flex-column gap-3 mt-5">
+          <span class="fs-1 fw-bold">Our Goal</span>
+          <div class="d-flex flex-row align-items-center justify-content-center gap-3">
+            <div class="con-row"></div>
+            <span>At Master Chef AI, our goal is to make smart cooking easy, personalized, and accessible. We combine AI with everyday cooking to guide and inspire every level of cook. You're not just following recipes — you're cooking smarter and living better. Our technology learns your tastes and preferences to tailor each meal just for you. Experience the future of cooking where creativity meets convenience.</span>
+          </div>
+        </div>
+      </div>
+      <div class="mobfeature container gap-3" id="feature-mob">
+        <h2 class="mob_about_heading  fea">Features</h2>
+        <span class="fs-5 fw-bold text-dark">Innovation Served on Your Plate</span>
+        <br>
+        <div class="fea-1" onclick="fsone(modalContent);">
+          <span class="fs-4 fw-bold ">AI Recipe on Demand</span>
+        </div>
+         <div class="fea-1" onclick="fsone(modalContent1);">
+          <span class="fs-4 fw-bold ">Voice-to-Recipe Prompting</span>
+        </div>
+         <div class="fea-1" onclick="fsone(modalContent2);">
+          <span class="fs-4 fw-bold ">Personalized Recipe Hub</span>
+        </div>
+         <div class="fea-1" onclick="fsone(modalContent3);">
+          <span class="fs-4 fw-bold ">Smart & Fast Response</span>
+        </div>
+         <div class="fea-1" onclick="fsone(modalContent4);">
+          <span class="fs-4 fw-bold ">Save Chat & AI Voice Readback</span>
+        </div>
+         <div class="fea-1" onclick="fsone(modalContent5);">
+          <span class="fs-4 fw-bold ">Upcoming Features</span>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
     <script src="Assts/JS/typingeffect.js"></script>
+    <script src="Assts/JS/mobile.js"></script>
     <script
       src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
       type="module"></script>
+      
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init({
-        duration: 3000, // animation time in ms
-        once: false, // only animate once
-      
+        once: false,
       });
     </script>
+  </body>
 </html>
